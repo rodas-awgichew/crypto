@@ -1,0 +1,87 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #050115;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  background-color: transparent;
+}
+
+.logo-icon {
+  color: #4da3ff;
+  font-size: 1.6rem;
+}
+
+.nav-link {
+  color: #ffffffcc;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 90vh;
+  background: #050115;
+  position: relative;
+  overflow: hidden;
+}
+
+.small-text {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #b9b9ff;
+  letter-spacing: 0.05em;
+}
+
+.text-highlight {
+  position: relative;
+  color: #fff;
+}
+
+.text-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 6px;
+  background-color: #4da3ff;
+  border-radius: 3px;
+}
+
+.btn-primary {
+  background-color: #4da3ff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #3188e6eb;
+}
+
+/* Button Hover Animation */
+.btn-hover {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.btn-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(77, 163, 255, 0.4);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+
+img:hover {
+  transform: scale(1.08);
+}
