@@ -76,15 +76,45 @@ body {
   box-shadow: 0 8px 20px rgba(77, 163, 255, 0.4);
 }
 
-img1 {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.6s ease;
+.hero-images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-img:hover {
-  transform: scale(1.08);
+.image-stack {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
 }
+
+/* Left image (on top) */
+.img-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 60%;
+  transform: rotate(-6deg);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Right image (behind) */
+.img-right {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  z-index: 2;
+  width: 60%;
+  opacity: 0.8;
+  transform: rotate(6deg);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  filter: brightness(0.9);
+}
+
 
 
 /* about page */

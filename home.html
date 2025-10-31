@@ -29,20 +29,20 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item mx-2"><a class="nav-link active" href="#">Home</a></li>
           <li class="nav-item">
-          <a class="nav-link active text-white" href="about">About</a> </li>
+          <a class="nav-link active text-white" href="">About</a> </li>
           <li class="nav-item mx-2"><a class="nav-link" href="#">Pages</a></li>
           <li class="nav-item mx-2"><a class="nav-link" href="#">Blog</a></li>
           <li class="nav-item mx-2"><a class="nav-link" href="#">Contact</a></li>
-          
-        </ul>
-      </div>
-      <li class="nav-item ms-3">
+          <li class="nav-item ms-3">
             <a href="#" class="btn btn-light rounded-pill px-4 py-2 fw-semibold btn-hover">Get Started</a>
           </li>
+        </ul>
+      </div>
+      
     </div>
   </nav>
 
@@ -63,9 +63,12 @@
       </div>
 
       <div class="col-md-6 text-center mt-5 mt-md-0 hero-images position-relative">
-  <img src="images/currency.webp" alt="Crypto Illustration" class="img-fluid floating-image img-front" />
-  <img src="images/currency.webp" alt="Crypto Illustration" class="img-fluid floating-image img-back" />
+  <div class="image-stack position-relative d-inline-block">
+    <img src="images/currency.webp" alt="Crypto Illustration Left" class="img-fluid floating-image img-left" />
+    <img src="images/currency.webp" alt="Crypto Illustration Right" class="img-fluid floating-image img-right" />
+  </div>
 </div>
+
 
     </div>
   </div>
@@ -131,6 +134,37 @@
   ease: "sine.inOut"
 });
 
+gsap.to(".img-left", {
+    y: -10,
+    rotation: -5,
+    duration: 2.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+  });
+
+  gsap.to(".img-right", {
+    y: 10,
+    rotation: 5,
+    duration: 2.8,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+  });
+
+  // Entrance fade and slide
+  gsap.from(".image-stack", {
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "top 85%",
+      toggleActions: "play none none reverse",
+    },
+  });
+
 // about section image toggle
 
    gsap.registerPlugin(ScrollTrigger);
@@ -182,7 +216,7 @@
       duration: 1.2,
       ease: "power2.out",
       stagger: 0.2, // delay between paragraphs
-    }, "-=0.6")
+    }, "-=0.3")
     .from(".text-section a", {
       y: 20,
       opacity: 0,
