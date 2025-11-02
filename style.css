@@ -117,38 +117,75 @@ body {
 
 
 
-/* about page */
-
-.about-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+.image-container {
   position: relative;
-  scroll-margin-top: 80px;
-}
-
-.about-section .image-container {
-  position: relative;
-  width: 100%;
-  height: 450px;
+  width: 100vw;
+  max-width: 90vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 550px;
   overflow: hidden;
-  border-radius: 25px;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
+  border-radius: 12px;
+  margin-top: 100px;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
 }
 
-.about-section .about-image {
+/* 🔥 The images themselves */
+.about-image {
   position: absolute;
-  inset: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
   transform: scale(1.1);
-  transition: opacity 1s ease, transform 2s ease;
+  filter: brightness(0.9) blur(0px);
+  transition: opacity 1.5s ease, transform 4s ease, filter 2s ease;
+}
+.about-content {
+  position: absolute;
+  top: 40%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 4;
 }
 
-.about-section .about-image.active {
+/* Active image effect */
+.about-image.active {
   opacity: 1;
   transform: scale(1);
+  filter: brightness(1) blur(3px);
 }
 
+/* 👇 Creates smooth blurred edge blending with page background */
+.image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(5, 1, 21, 0) 65%,
+    rgba(5, 1, 21, 0.6) 85%,
+    rgba(5, 1, 21, 1) 100%
+  ),
+    linear-gradient(
+      to bottom,
+      rgba(5, 1, 21, 0.8) 0%,
+      rgba(5, 1, 21, 0) 25%,
+      rgba(5, 1, 21, 0) 75%,
+      rgba(5, 1, 21, 0.8) 100%
+    )
+  ;
+  pointer-events: none;
+  z-index: 3;
+}
+@media (max-width: 768px) {
+  .img-left,
+  .img-right {
+    width: 80%;
+  }
+}
