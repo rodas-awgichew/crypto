@@ -19,22 +19,21 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark py-4">
+  <nav class="navbar navbar-expand-lg navbar-dark py-4 sticky-top" style="z-index:1030;" data-aos="none">
     <div class="container">
       <a class="navbar-brand fw-bold fs-3" href="#">
         <span class="logo-icon">$</span> CryptoSpace
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="navMenu">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item mx-2"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item">
-          <a class="nav-link active text-white" href="">About</a> </li>
-          <li class="nav-item mx-2"><a class="nav-link" href="#">Pages</a></li>
+          <li class="nav-item"><a class="nav-link active text-white" href="#about">About</a></li>
+          <li class="nav-item mx-2"><a class="nav-link" href="#why-us">Why us</a></li>
           <li class="nav-item mx-2"><a class="nav-link" href="#">Blog</a></li>
           <li class="nav-item mx-2"><a class="nav-link" href="#">Contact</a></li>
           <li class="nav-item ms-3">
@@ -42,9 +41,10 @@
           </li>
         </ul>
       </div>
-      
     </div>
   </nav>
+
+
 
   <!-- Hero -->
   <section class="hero d-flex align-items-center position-relative overflow-hidden">
@@ -106,6 +106,87 @@
   </div>
 </section>
 
+
+
+<!-- IMPACT SECTION -->
+<section id="impact" class="impact-section">
+  <div class="impact-overlay"></div>
+
+  <div class="container text-center text-white py-5" data-aos="fade-up">
+    <h2 class="fw-bold mb-5 glow-text">Our Global Impact</h2>
+    <div class="row justify-content-center g-5">
+      <div class="col-md-4">
+        <div class="impact-box">
+          <h1 class="counter" data-target="17">0</h1>
+          <p class="small-text">Countries We Operate In</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="impact-box">
+          <h1 class="counter" data-target="500">0</h1>
+          <p class="small-text">Deployments Across Industries</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="impact-box">
+          <h1 class="counter" data-target="13">0</h1>
+          <p class="small-text">Industry Categories</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--  why us section  -->
+
+<section id="why-us" class="why-us-section">
+  <div class="container position-relative text-center text-white">
+    <h2 class="fw-bold mb-5 section-title" data-aos="fade-up" data-aos-duration="1000">
+      Why <span class="text-highlight">Us?</span>
+    </h2>
+
+    <div class="tree-container">
+      <!-- Left Branch -->
+      <div class="branch left" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-box floating">
+          <span class="dot"></span>
+          <h5>Blockchain-Powered Security</h5>
+          <p>Our advanced encryption ensures full transparency and protection for every transaction.</p>
+        </div>
+      </div>
+
+      <div class="branch left" data-aos="fade-up" data-aos-delay="400">
+        <div class="feature-box floating">
+          <span class="dot"></span>
+          <h5>Decentralized Ecosystem</h5>
+          <p>We give users complete control — no intermediaries, no restrictions.</p>
+        </div>
+      </div>
+
+      <!-- Center Stem -->
+      <div class="tree-line"></div>
+
+      <!-- Right Branch -->
+      <div class="branch right" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-box floating">
+          <span class="dot"></span>
+          <h5>AI-Driven Analytics</h5>
+          <p>We merge blockchain data with AI to deliver real-time predictive insights.</p>
+        </div>
+      </div>
+
+      <div class="branch right" data-aos="fade-up" data-aos-delay="500">
+        <div class="feature-box floating">
+          <span class="dot"></span>
+          <h5>Smart Contract Scalability</h5>
+          <p>Custom-built smart contracts that evolve with your business, securely and efficiently.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES SECTION -->
 <section id="services" class="services-section py-5">
   <div class="container text-center">
@@ -142,35 +223,6 @@
           </div>
           <h4>AI-Driven Analytics</h4>
           <p>Unlock powerful insights from blockchain data using AI and predictive models.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT SECTION -->
-<section id="impact" class="impact-section">
-  <div class="impact-overlay"></div>
-
-  <div class="container text-center text-white py-5" data-aos="fade-up">
-    <h2 class="fw-bold mb-5 glow-text">Our Global Impact</h2>
-    <div class="row justify-content-center g-5">
-      <div class="col-md-4">
-        <div class="impact-box">
-          <h1 class="counter" data-target="17">0</h1>
-          <p class="small-text">Countries We Operate In</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="impact-box">
-          <h1 class="counter" data-target="500">0</h1>
-          <p class="small-text">Deployments Across Industries</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="impact-box">
-          <h1 class="counter" data-target="13">0</h1>
-          <p class="small-text">Industry Categories</p>
         </div>
       </div>
     </div>
@@ -253,6 +305,24 @@ gsap.to(".img-left", {
     },
   });
 });
+
+(function() {
+      const nav = document.querySelector('.navbar');
+      const threshold = 50; // pixels scrolled before blur engages
+
+      function onScroll() {
+        const scrolled = window.scrollY || document.documentElement.scrollTop;
+        if (scrolled > threshold) {
+          nav.classList.add('blur-bg');
+        } else {
+          nav.classList.remove('blur-bg');
+        }
+      }
+
+      // Run on scroll and on load (in case page is opened scrolled)
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('load', onScroll);
+    })();
 
 
 // about section image toggle
