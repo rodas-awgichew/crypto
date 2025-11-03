@@ -148,6 +148,37 @@
   </div>
 </section>
 
+<!-- IMPACT SECTION -->
+<section id="impact" class="impact-section">
+  <div class="impact-overlay"></div>
+
+  <div class="container text-center text-white py-5" data-aos="fade-up">
+    <h2 class="fw-bold mb-5 glow-text">Our Global Impact</h2>
+    <div class="row justify-content-center g-5">
+      <div class="col-md-4">
+        <div class="impact-box">
+          <h1 class="counter" data-target="17">0</h1>
+          <p class="small-text">Countries We Operate In</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="impact-box">
+          <h1 class="counter" data-target="500">0</h1>
+          <p class="small-text">Deployments Across Industries</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="impact-box">
+          <h1 class="counter" data-target="13">0</h1>
+          <p class="small-text">Industry Categories</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
   <!-- Bootstrap + AOS + GSAP -->
@@ -265,6 +296,41 @@ gsap.to(".img-left", {
       once: true,
     },
   });
+
+// Counter Animation
+const counters = document.querySelectorAll('.counter');
+let hasAnimated = false;
+
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const increment = target / 100;
+
+    let count = 0;
+    const updateCounter = () => {
+      if (count < target) {
+        count += increment;
+        counter.textContent = Math.ceil(count);
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target + '+';
+      }
+    };
+    updateCounter();
+  });
+};
+
+// Trigger when section enters view
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !hasAnimated) {
+      hasAnimated = true;
+      animateCounters();
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(document.querySelector('#impact'));
 
   </script>
 </body>

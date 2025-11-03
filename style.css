@@ -262,3 +262,82 @@ body {
   50% { transform: rotate(10deg) translateY(-8px); }
   100% { transform: rotate(0deg) translateY(0); }
 }
+
+ /* Impact Section */
+.impact-section {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0d011e 0%, #000 90%);
+  overflow: hidden;
+}
+
+/* Moving gradient pattern background */
+.impact-section::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png') repeat;
+  opacity: 0.06;
+  animation: rotateBg 80s linear infinite;
+}
+
+@keyframes rotateBg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Purple glow overlay */
+.impact-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(150,0,255,0.2), rgba(0,0,0,0.95));
+  z-index: 1;
+}
+
+/* Text and glow styles */
+.glow-text {
+  text-shadow: 0 0 15px rgba(43, 0, 255, 0.9);
+}
+
+.impact-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 2rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(160, 0, 255, 0.4);
+}
+
+.counter {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(200,0,255,0.8);
+}
+
+.small-text {
+  font-size: 1rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .impact-box {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .counter {
+    font-size: 3rem;
+  }
+}
