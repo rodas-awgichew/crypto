@@ -106,8 +106,48 @@
   </div>
 </section>
 
+<!-- SERVICES SECTION -->
+<section id="services" class="services-section py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5 text-gradient" data-aos="fade-up">What We Offer</h2>
+    <p class="section-intro mb-5" data-aos="fade-up" data-aos-delay="200">
+      Powering innovation through secure blockchain, smart finance, and data-driven solutions.
+    </p>
 
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="icon-orbit">
+            <i class="fas fa-coins"></i>
+          </div>
+          <h4>Crypto Investment</h4>
+          <p>Invest smarter with transparent blockchain-backed financial models that grow with you.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card">
+          <div class="icon-orbit">
+            <i class="fas fa-link"></i>
+          </div>
+          <h4>Blockchain Integration</h4>
+          <p>We connect your business with the future through scalable decentralized solutions.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card">
+          <div class="icon-orbit">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h4>AI-Driven Analytics</h4>
+          <p>Unlock powerful insights from blockchain data using AI and predictive models.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 
 
   <!-- Bootstrap + AOS + GSAP -->
@@ -166,6 +206,23 @@ gsap.to(".img-left", {
       toggleActions: "play none none reverse",
     },
   });
+
+
+ // Service cards animation
+  gsap.utils.toArray(".service-card").forEach((card, i) => {
+  gsap.from(card, {
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    delay: i * 0.2,
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+      toggleActions: "play none none reverse",
+    },
+  });
+});
+
 
 // about section image toggle
 
