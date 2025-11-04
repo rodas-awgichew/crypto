@@ -190,13 +190,19 @@ body {
   pointer-events: none;
   z-index: 3;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .img-left,
   .img-right {
-    width: 80%;
+    width: 70%;
   }
+
 }
 
+@media (max-width: 770px) {
+  .hero-images {
+    display: none;
+  }
+}
 
 /* services section */
 
@@ -272,7 +278,116 @@ body {
   100% { transform: rotate(0deg) translateY(0); }
 }
 
- /* Impact Section */
+@media (max-width: 768px) {
+  .service-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* about section */
+.about-section {
+  position: relative;
+  background: radial-gradient(circle at center, #07022b, #050115 80%);
+  color: #fff;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+.about-content {
+  max-width: 720px;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  right: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  z-index: 5;
+}
+
+/* make the container adapt to viewport widths/heights */
+.image-container {
+  max-width: 1200px;
+  width: 95vw;
+  height: 62vh;
+  min-height: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 60px;
+}
+
+/* ensure the images fill and stay centered when scaled */
+.about-image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* medium screens */
+@media (max-width: 992px) {
+  .image-container {
+    height: 52vh;
+    max-width: 100%;
+    margin-top: 34px;
+  }
+  .about-content {
+    max-width: 640px;
+    top: 2%;
+    padding: 1rem;
+  }
+}
+
+/* small screens: center content over image and increase readability */
+@media (max-width: 768px) {
+  .image-container {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 42vh;
+    margin-top: 40px;
+    border-radius: 10px;
+  }
+
+  .about-content {
+    position: absolute;
+    top: 2%;
+    right: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    max-width: 720px;
+    text-align: center;
+    padding: 0.9rem;
+    font-size: 0.98rem;
+    background: rgba(5,1,21,0.0); /* preserves overlay behavior while improving contrast if needed */
+  }
+
+  .about-image.active {
+    filter: brightness(1) blur(1px);
+    transform: scale(1);
+  }
+}
+
+/* extra small screens */
+@media (max-width: 576px) {
+  .image-container {
+    height: 25vh;
+    margin-top: 8px;
+    border-radius: 8px;
+  }
+
+  .about-content {
+    top: 6%;
+    font-size: 0.65rem;
+    padding: 0.45rem;
+    width: 94%;
+  }
+
+  .about-content .btn-primary {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.65rem;
+  }
+}
+/* Impact Section */
 .impact-section {
   position: relative;
   min-height: 70vh;
