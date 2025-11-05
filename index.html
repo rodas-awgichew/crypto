@@ -483,6 +483,39 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(document.querySelector('#impact'));
 
+gsap.from(".contact-title", {
+            opacity: 1,
+            y: -50,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        gsap.from(".form-container", {
+            opacity: 1,
+            y: 50,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.8
+        });
+
+        gsap.from(".form-control", {
+            opacity: 1,
+            x: -20,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.7)",
+            delay: 1.2
+        });
+
+        gsap.from(".submit-btn", {
+            opacity: 1,
+            scale: 0.8,
+            duration: 0.7,
+            ease: "elastic.out(1, 0.5)",
+            delay: 1.5
+        });
+
   </script>
 </body>
 </html>
