@@ -1,82 +1,84 @@
-/* Login Page Styles */
 .login-body {
   background: radial-gradient(circle at bottom, #050115 0%, #0b032d 100%);
   min-height: 100vh;
-  
+ 
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+.auth-container {
   position: relative;
-}
-
-/* Subtle floating orbs animation background */
-.login-body::before, .login-body::after {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(112, 97, 255, 0.25), transparent);
-  animation: floatOrb 8s ease-in-out infinite;
-  filter: blur(80px);
-}
-
-.login-body::before {
-  top: 20%;
-  left: -10%;
-}
-.login-body::after {
-  bottom: 10%;
-  right: -10%;
-  animation-delay: 4s;
+  width: 100%;
+  max-width: 450px;
 }
 
 /* Login Card */
 .login-card {
+  width: 480px; /
   background: rgba(15, 8, 40, 0.9);
+  padding: 3rem 2.5rem;
   border-radius: 20px;
-  padding: 3rem 2rem;
-  width: 100%;
-  max-width: 420px;
-  backdrop-filter: blur(12px);
+  color: #fff;
   box-shadow: 0 0 40px rgba(139, 127, 255, 0.25);
-  animation: fadeInUp 1.2s ease forwards;
+  backdrop-filter: blur(12px);
+  animation: fadeInUp 0.8s ease;
 }
 
-/* Inputs */
+/* Inputs text visibility */
 .form-control {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border-radius: 10px;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff !important;
 }
+
+/* Popup */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+.popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup-content {
+  background: #050115;
+  color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  animation: popupFade 0.4s ease;
+}
+@keyframes popupFade {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 
 .form-control:focus {
   border-color: #8b7fff;
   box-shadow: 0 0 10px rgba(139, 127, 255, 0.4);
   background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
-/* Button */
+/* Buttons */
 .login-btn {
   background: linear-gradient(135deg, #8b7fff, #4b30e0);
   border: none;
   transition: all 0.4s ease;
 }
-
 .login-btn:hover {
   background: linear-gradient(135deg, #a18fff, #6a4eff);
   box-shadow: 0 0 15px rgba(139, 127, 255, 0.6);
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 
-@keyframes floatOrb {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-30px); }
-}
