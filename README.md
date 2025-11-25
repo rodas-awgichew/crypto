@@ -10,16 +10,6 @@ Crypto is a modern web application project aimed at revolutionizing digital fina
 - **JavaScript/GSAP**: GSAP powers dynamic UI effects, hero transitions, scroll-based animations, and floating elements.
 - **AOS (Animate On Scroll)**: Smooth element entrance animations for interactive experiences
 
-## Features
-
-### AI-Driven Analytics
-Combines blockchain data with artificial intelligence to provide real-time predictive analytics and market insights.
-
-### Smart Contract Scalability
-Offers custom smart contracts designed to scale and adapt securely with evolving business needs.
-
-### Global Impact
-The platform highlights international reach—operating across multiple countries and industries.
 
 ### Modern Web Experiences
 Animated hero sections, floating graphics, image carousels, and glowing text accents for visual appeal and engagement.
